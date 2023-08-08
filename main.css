@@ -35,6 +35,11 @@ h1 {
     border-radius: 3vmin;
 }
 
+#board > div:hover {
+    transform: scale(1.05);
+    background-color: gray;
+}
+
 button {
     margin-top: 4vmin;
     padding: 2vmin;

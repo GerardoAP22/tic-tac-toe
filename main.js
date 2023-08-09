@@ -34,6 +34,12 @@ function render(){
     renderBoard();
     renderMessages();
     renderControls();
+
+    if (!winner && board.every((cell) => cell !== 0)) {
+        winner = 'T';
+        renderMessages();
+        renderControls();
+    }
 }
 
 function renderBoard(){
@@ -59,6 +65,7 @@ function renderControls() {
 }
 
 function handleChoice(evt){
+    if(winner !== null) return; 
     const idx = divEls.indexOf(evt.target);
     if(evt.target.id === "board") return;
     if (board[idx] !== 0) return;
